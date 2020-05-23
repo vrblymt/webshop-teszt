@@ -3,11 +3,13 @@
 namespace App\Http\Controllers;
 
 use Illuminate\Http\Request;
+use App\User;
 
 class NewsController extends Controller
 {
     public function index()
     {
-        return view('News');
+        $data = User::all();
+        return view('News')->with('adat', $data);
     }
 }

@@ -26,7 +26,7 @@
                 <a class="navbar-brand" href="{{ url('/') }}">
                     {{ config('app.name', 'Webshop') }}
                 </a>
-                 <a class="navbar-brand" href="{{ url('/news')}}">
+                 <a class="navbar-brand" href="{{ route('news')}}">
                     News
                  </a>
                  <a class="navbar-brand" href="{{ url('/shop')}}">
