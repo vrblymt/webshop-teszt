@@ -11,13 +11,9 @@
 |
 */
 
-Route::get('/', function () {
-    return view('home');
-});
 
 Auth::routes();
-
-Route::get('/home', 'HomeController@index')->name('home');
+Route::view('/{path?}', 'layouts/app');
 Route::get('/news', 'NewsController@index')->name('news');
 Route::post('/addNews', 'NewsController@addNews')->name('add');
 Route::get('/removeNew/{id}', 'NewsController@removeNews');

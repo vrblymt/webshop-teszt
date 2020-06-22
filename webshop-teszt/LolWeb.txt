@@ -1,0 +1,6 @@
+Headerbe: 
+	    KEY			Value
+	X-Riot-Token	 Token a weboldalról
+https://developer.riotgames.com/
+
+https://ddragon.leagueoflegends.com/cdn/9.2.1/img/profileicon/{iconId}.png
