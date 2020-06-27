@@ -16,4 +16,4 @@ Auth::routes();
 Route::view('/{path?}', 'layouts/app');
 Route::get('/news', 'NewsController@index')->name('news');
 Route::post('/addNews', 'NewsController@addNews')->name('add');
-Route::get('/removeNew/{id}', 'NewsController@removeNews');
+Route::delete('/removeNew/{new}', 'NewsController@removeNews');

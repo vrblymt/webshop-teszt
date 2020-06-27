@@ -14,21 +14,12 @@ class NewsController extends Controller
         $data = News::all();
         return view('News')->with('adat', $data);
     }
-    public function addNews(Request $request){
-        $validated = $request->validate([
-            "title" => "required|unique:news",
-            "text" => "required"
-        ], [
-            "title.required" => "A cím nem lehet üres!"
-        ] );
-        $news = new News();
-        $news->title = $validated["title"];
-        $news->text = $validated["text"];
-        $news->save();
+    public function addNews(){
+        News::create($this->validateRequest());
         return redirect()->back();
     }
-    public function removeNews($id){
-        News::find($id)->delete();
+    public function removeNews(News $new){
+        $new->delete();
 
         return redirect()->back();
     }
@@ -39,5 +30,13 @@ class NewsController extends Controller
         $news->save();
 
         return redirect()->back();
+    }
+    private function validateRequest(){
+        return request()->validate([
+            "title" => "required|unique:news",
+            "text" => "required"
+        ], [
+            "title.required" => "A cím nem lehet üres!"
+        ]);
     }
 }
